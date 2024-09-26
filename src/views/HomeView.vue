@@ -72,7 +72,7 @@ export default {
   methods: {
     getUser() {
       this.$axios
-        .get(`/api/user`, { params: { query: this.textSearch } })
+        .get(`/`, { params: { search: this.textSearch || "" } })
         .then((res) => {
           this.listUsers = res.data;
         })
@@ -81,9 +81,8 @@ export default {
         });
     },
     deleteUser(id) {
-      console.log(id);
       this.$axios
-        .delete(`/api/delete-user/${id}`)
+        .delete(`/delete/${id}`)
         .then(() => {
           window.alert(`Delete success`);
           this.getUser();

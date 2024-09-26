@@ -74,7 +74,7 @@ export default {
   methods: {
     create() {
       this.$axios
-        .post(`/api/create-user`, this.userDetail)
+        .post(`/create`, this.userDetail)
         .then(() => {
           window.alert(`Create  success`);
           this.$router.push(`/`);

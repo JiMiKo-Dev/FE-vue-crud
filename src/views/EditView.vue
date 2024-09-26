@@ -77,14 +77,14 @@ export default {
   },
   methods: {
     getUserById() {
-      this.$axios.get(`/api/user/${this.$route.params.id}`).then((res) => {
+      this.$axios.get(`/${this.$route.params.id}`).then((res) => {
         this.userDetail = res.data;
       });
     },
 
     update() {
       this.$axios
-        .put(`/api/edit-user/${this.$route.params.id}`, this.userDetail)
+        .put(`/update/${this.$route.params.id}`, this.userDetail)
         .then(() => {
           window.alert(`Update  success`);
           this.$router.push(`/`);

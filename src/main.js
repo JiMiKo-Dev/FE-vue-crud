@@ -7,7 +7,7 @@ import axios from "axios";
 
 const app = createApp(App);
 
-axios.defaults.baseURL = "http://localhost:3300/";
+axios.defaults.baseURL = "http://localhost:3000/user";
 app.config.globalProperties.$axios = axios;
 
 app.use(router).mount("#app");
